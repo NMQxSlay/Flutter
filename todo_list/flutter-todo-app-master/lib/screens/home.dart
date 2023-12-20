@@ -57,6 +57,7 @@ class _HomeState extends State<Home> {
                           todo: todoo,
                           onToDoChanged: _handleToDoChange,
                           onDeleteItem: _deleteToDoItem,
+                          onEditItem: _editToDoItem,
                         ),
                     ],
                   ),
@@ -138,6 +139,12 @@ class _HomeState extends State<Home> {
     });
   }
 
+  void _editToDoItem(String id) {
+    setState(() {
+      todosList.removeWhere((item) => item.id == id);
+    });
+  }
+
   void _addToDoItem(String toDo) {
     setState(() {
       todosList.add(ToDo(
@@ -146,23 +153,6 @@ class _HomeState extends State<Home> {
       ));
     });
     _todoController.clear();
-  }
-
-  void _runFilter(String enteredKeyword) {
-    List<ToDo> results = [];
-    if (enteredKeyword.isEmpty) {
-      results = todosList;
-    } else {
-      results = todosList
-          .where((item) => item.todoText!
-              .toLowerCase()
-              .contains(enteredKeyword.toLowerCase()))
-          .toList();
-    }
-
-    setState(() {
-      _foundToDo = results;
-    });
   }
 
   AppBar _buildAppBar() {
