@@ -37,7 +37,7 @@ class PopularItemsWidget extends StatelessWidget {
     "Nếm thử món Hot Pizza của chúng tôi",
     "Nếm thử món Chicken Salan của chúng tôi",
     "Nếm thử món Chicken biryani của chúng tôi",
-    "Nếm thử món Hot Burger của chúng tôi",
+    "Nếm thử món Hot Burger của chúng tôi!",
   ];
 
   final List<String> price = [

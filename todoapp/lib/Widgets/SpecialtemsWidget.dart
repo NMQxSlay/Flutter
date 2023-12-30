@@ -53,7 +53,7 @@ class SpecialItemsWidget extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "Nếm thử món Hot Pizza của chúng tôi",
+                          "Nếm thử món Hot Pizza của chúng tôi!",
                           style: TextStyle(
                             fontSize: 16,
                             // fontWeight: FontWeight.bold,
