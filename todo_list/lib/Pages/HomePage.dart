@@ -155,7 +155,7 @@ class HomePage extends StatelessWidget {
                           userInput =
                               value; // Cập nhật giá trị khi người dùng nhập
                         },
-                        decoration: InputDecoration(labelText: 'Item Details'),
+                        decoration: InputDecoration(labelText: 'Item '),
                       ),
                     ],
                   ),
