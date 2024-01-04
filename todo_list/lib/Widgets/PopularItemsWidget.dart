@@ -13,7 +13,7 @@ class FoodItem {
     required this.price,
   });
 
-  static foodItems() {}
+  List<FoodItem> foodItems = [];
 }
 
 class PopularItemsWidget extends StatefulWidget {
@@ -25,45 +25,33 @@ class _PopularItemsWidgetState extends State<PopularItemsWidget> {
   static List<FoodItem> foodItems = [
     FoodItem(
       image: 'images/burger.png' as String,
-      title: "Hot Burger",
+      title: "Hamburger",
       description: "Nếm thử món Hot Burger của chúng tôi",
-      price: "\$10",
+      price: "30000đ",
     ),
     FoodItem(
       image: 'images/biryani.png' as String,
-      title: "Chicken biryani",
+      title: "Gà biryani",
       description: "Nếm thử món Chicken biryani của chúng tôi",
-      price: "\$10",
+      price: "30000đ",
     ),
     FoodItem(
       image: 'images/drink.png' as String,
-      title: "Strawberry Sting",
+      title: "Sting",
       description: "Uống thử thức uống Strawberry Sting của chúng tôi",
-      price: "\$10",
+      price: "50000đ",
     ),
     FoodItem(
       image: 'images/pizza.png' as String,
-      title: "Hot Pizza",
+      title: "Pizza",
       description: "Nếm thử món Hot Pizza của chúng tôi",
-      price: "\$10",
+      price: "100000đ",
     ),
     FoodItem(
       image: 'images/salan.png' as String,
-      title: "Chicken Salan",
+      title: "Gà Salan",
       description: "Nếm thử món Chicken Salan của chúng tôi",
-      price: "\$10",
-    ),
-    FoodItem(
-      image: 'images/biryani.png' as String,
-      title: "Chicken biryani",
-      description: "Nếm thử món Chicken biryani của chúng tôi",
-      price: "\$10",
-    ),
-    FoodItem(
-      image: 'images/burger.png' as String,
-      title: "Hot Burger",
-      description: "Nếm thử món Hot Burger của chúng tôi!",
-      price: "\$10",
+      price: "200000đ",
     ),
   ];
 
