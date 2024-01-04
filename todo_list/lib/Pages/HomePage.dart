@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ma/Widgets/AppBarWidget.dart';
@@ -8,6 +6,7 @@ import 'package:ma/Widgets/SpecialtemsWidget.dart';
 import 'package:ma/Widgets/PopularItemsWidget.dart';
 
 class HomePage extends StatelessWidget {
+  final TextEditingController _addFoodController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,7 +67,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
 
-          //Category
+          // Category
           Padding(
             padding: EdgeInsets.only(
               top: 20,
@@ -83,10 +82,10 @@ class HomePage extends StatelessWidget {
             ),
           ),
 
-          //Category Widget
+          // Category Widget
           CategoriesWidget(),
 
-          //Popular Items
+          // Popular Items
           Padding(
             padding: EdgeInsets.only(
               top: 20,
@@ -101,10 +100,10 @@ class HomePage extends StatelessWidget {
             ),
           ),
 
-          //Popular Items Widget
+          // Popular Items Widget
           PopularItemsWidget(),
 
-          //Newest Items
+          // Newest Items
           Padding(
             padding: EdgeInsets.only(
               top: 20,
@@ -118,30 +117,111 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          //Newest Item Widget
+          // Newest Item Widget
           SpecialItemsWidget(),
-          Container(
-            margin: EdgeInsets.only(
-              bottom: 10,
-              right: 200,
-              left: 200,
-            ),
-            child: ElevatedButton(
-              child: Text(
-                '+',
-                style: TextStyle(
-                  fontSize: 40,
-                ),
-              ),
-              style: ElevatedButton.styleFrom(
-                primary: const Color.fromARGB(255, 141, 161, 177),
-                minimumSize: Size(60, 60),
-                elevation: 10,
-              ),
-              onPressed: () {},
-            ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add),
+            label: "Add",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: "Search",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.delete),
+            label: "Delete",
           ),
         ],
+        onTap: (int index) {
+          if (index == 0) {
+            // Show dialog when "Add" button is pressed
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                String userInput =
+                    ''; // Biến để lưu trữ giá trị nhập từ bàn phím
+
+                return AlertDialog(
+                  title: Text("Add Item"),
+                  content: Column(
+                    children: [
+                      TextField(
+                        controller: _addFoodController,
+                        onChanged: (value) {
+                          userInput =
+                              value; // Cập nhật giá trị khi người dùng nhập
+                        },
+                        decoration: InputDecoration(labelText: 'Item Details'),
+                      ),
+                    ],
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        // Xử lý khi người dùng nhấn nút "Add"
+                        // Ở đây, bạn có thể thêm giá trị `userInput` vào danh sách hoặc làm điều gì đó khác
+                        print('User input: $userInput');
+                        Navigator.of(context).pop(); // Đóng dialog
+                      },
+                      child: Text("Add"),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pop(); // Đóng dialog khi người dùng nhấn nút "Close"
+                      },
+                      child: Text("Close"),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
+          if (index == 1) {
+            // Show dialog when "Add" button is pressed
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text("Search Item"),
+                  content: Text("Your custom content goes here."),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text("Close"),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
+          if (index == 2) {
+            // Show dialog when "Add" button is pressed
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text("Delete Item"),
+                  content: Text("Your custom content goes here."),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text("Close"),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
+        },
       ),
     );
   }
