@@ -24,34 +24,58 @@ class PopularItemsWidget extends StatefulWidget {
 class _PopularItemsWidgetState extends State<PopularItemsWidget> {
   static List<FoodItem> foodItems = [
     FoodItem(
-      image: 'images/burger.png' as String,
+      image: 'images/burger.png',
       title: "Hamburger",
       description: "Nếm thử món Hot Burger của chúng tôi",
       price: "30000đ",
     ),
     FoodItem(
-      image: 'images/biryani.png' as String,
-      title: "Gà biryani",
-      description: "Nếm thử món Chicken biryani của chúng tôi",
-      price: "30000đ",
+      image: 'images/pepsi.jpg',
+      title: "Pepsi",
+      description: "Nếm uống Pepsi của chúng tôi",
+      price: "10000đ",
     ),
     FoodItem(
-      image: 'images/drink.png' as String,
+      image: 'images/drink.png',
       title: "Sting",
       description: "Uống thử thức uống Strawberry Sting của chúng tôi",
-      price: "50000đ",
+      price: "7000đ",
     ),
     FoodItem(
-      image: 'images/pizza.png' as String,
+      image: 'images/pizza.png',
       title: "Pizza",
       description: "Nếm thử món Hot Pizza của chúng tôi",
       price: "100000đ",
     ),
     FoodItem(
-      image: 'images/salan.png' as String,
-      title: "Gà Salan",
-      description: "Nếm thử món Chicken Salan của chúng tôi",
+      image: 'images/salan.png',
+      title: "Gà hầm ",
+      description: "Nếm thử món Gà hầm của chúng tôi",
       price: "200000đ",
+    ),
+    FoodItem(
+      image: 'images/bundau.jpg',
+      title: "Bún đậu",
+      description: "Nếm thử món Bún đậu của chúng tôi",
+      price: "100000đ",
+    ),
+    FoodItem(
+      image: 'images/pho.png',
+      title: "Phở bò",
+      description: "Nếm thử món Phở bò của chúng tôi",
+      price: "200000đ",
+    ),
+    FoodItem(
+      image: 'images/nem.jpg',
+      title: "Nem rán",
+      description: "Nếm thử món Nem rán của chúng tôi",
+      price: "100000đ",
+    ),
+    FoodItem(
+      image: 'images/banhmi.jpg',
+      title: "Bánh mì",
+      description: "Nếm thử món Bánh mì của chúng tôi",
+      price: "100000đ",
     ),
   ];
 

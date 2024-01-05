@@ -60,7 +60,7 @@ class SpecialItemsWidget extends StatelessWidget {
                           ),
                         ),
                         RatingBar.builder(
-                          initialRating: 5,
+                          initialRating: 4,
                           minRating: 1,
                           direction: Axis.horizontal,
                           itemCount: 5,
@@ -73,7 +73,7 @@ class SpecialItemsWidget extends StatelessWidget {
                           onRatingUpdate: (index) {},
                         ),
                         Text(
-                          "\$10",
+                          "100000đ",
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.red,

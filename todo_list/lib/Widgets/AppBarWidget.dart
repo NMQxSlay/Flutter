@@ -47,7 +47,7 @@ class AppBarWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Icon(Icons.notifications),
+              child: Icon(CupertinoIcons.cart),
             ),
           ),
         ],
